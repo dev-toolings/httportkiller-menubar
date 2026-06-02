@@ -1,0 +1,47 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    name: Build DMG & Publish Release
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Select Xcode
+        uses: maxim-lobanov/setup-xcode@v1
+        with:
+          xcode-version: latest-stable
+
+      - name: Run tests
+        run: swift test
+
+      - name: Package .app
+        run: |
+          chmod +x Scripts/package_app.sh Scripts/make_dmg.sh
+          Scripts/package_app.sh
+
+      - name: Build DMG
+        run: Scripts/make_dmg.sh
+
+      - name: Upload DMG artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: PortKiller-dmg
+          path: dist/PortKiller.dmg
+
+      - name: Publish GitHub Release
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: dist/PortKiller.dmg
+          generate_release_notes: true
+          fail_on_unmatched_files: true

@@ -2,9 +2,9 @@
 
 > **Instantly find and kill the process listening on any TCP port — right from your macOS menu bar.** Free up `:3000`, `:8080`, `:5432` and fix _"address already in use"_ (`EADDRINUSE`) in one click.
 
-[![CI](https://github.com/MakFly/httportkiller-menubar/actions/workflows/ci.yml/badge.svg)](https://github.com/MakFly/httportkiller-menubar/actions/workflows/ci.yml)
-[![Release](https://img.shields.io/github/v/release/MakFly/httportkiller-menubar?sort=semver)](https://github.com/MakFly/httportkiller-menubar/releases/latest)
-[![Download DMG](https://img.shields.io/github/downloads/MakFly/httportkiller-menubar/total?label=downloads)](https://github.com/MakFly/httportkiller-menubar/releases/latest)
+[![CI](https://github.com/dev-toolings/httportkiller-menubar/actions/workflows/ci.yml/badge.svg)](https://github.com/dev-toolings/httportkiller-menubar/actions/workflows/ci.yml)
+[![Release](https://img.shields.io/github/v/release/dev-toolings/httportkiller-menubar?sort=semver)](https://github.com/dev-toolings/httportkiller-menubar/releases/latest)
+[![Download DMG](https://img.shields.io/github/downloads/dev-toolings/httportkiller-menubar/total?label=downloads)](https://github.com/dev-toolings/httportkiller-menubar/releases/latest)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Platform: macOS 15+](https://img.shields.io/badge/macOS-15%2B-black?logo=apple)](https://www.apple.com/macos/)
 [![Swift 6](https://img.shields.io/badge/Swift-6-orange?logo=swift)](https://www.swift.org)
@@ -34,7 +34,7 @@ hunting for PIDs with `lsof` and `kill -9`.
 
 ### Download (recommended)
 
-1. Grab the latest **`PortKiller.dmg`** from the [**Releases**](https://github.com/MakFly/httportkiller-menubar/releases/latest) page.
+1. Grab the latest **`PortKiller.dmg`** from the [**Releases**](https://github.com/dev-toolings/httportkiller-menubar/releases/latest) page.
 2. Open the DMG and **drag `PortKiller.app` into `Applications`**.
 3. Launch it — the `network` icon appears in your menu bar.
 
@@ -66,7 +66,7 @@ Click the menu bar icon to open the popover:
 Requirements: **macOS 15+** and **Swift 6 / Xcode 16**.
 
 ```sh
-git clone https://github.com/MakFly/httportkiller-menubar.git
+git clone https://github.com/dev-toolings/httportkiller-menubar.git
 cd httportkiller-menubar
 
 swift test            # run the test suite
